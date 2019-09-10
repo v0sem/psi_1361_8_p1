@@ -24,14 +24,14 @@
 # So donuts(5) returns 'Number of donuts: 5'
 # and donuts(23) returns 'Number of donuts: many'
 def donuts(count):
-	if count >= 10:
-		count = 'many'
+    if count >= 10:
+        count = 'many'
 
-	s = 'Number of donuts: '
+    s = 'Number of donuts: '
 
-	s = s + str(count)
+    s = s + str(count)
 
-	return s
+    return s
 
 
 # B. both_ends
@@ -40,14 +40,14 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-	if len(s) < 2:
-		return ''
+    if len(s) < 2:
+        return ''
 
-	length = len(s)
+    length = len(s)
 
-	s = s[0] + s[1] + s[length - 2] + s[length - 1] 
-	
-	return s
+    s = s[0] + s[1] + s[length - 2] + s[length - 1]
+
+    return s
 
 
 # C. fix_start
@@ -61,13 +61,13 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 def fix_start(s):
 
-	a = s[0]
+    a = s[0]
 
-	s = s.replace(a, '-', 1)
-	s = s.replace(a, '*')
-	s = s.replace('-', a)
+    s = s.replace(a, '-', 1)
+    s = s.replace(a, '*')
+    s = s.replace('-', a)
 
-	return s
+    return s
 
 
 # D. MixUp
@@ -78,54 +78,53 @@ def fix_start(s):
 #   'dog', 'dinner' -> 'dig donner'
 # Assume a and b are length 2 or more.
 def mix_up(a, b):
-	a1 = a.replace(a[0], b[0], 1)
-	a2 = a1.replace(a[1], b[1], 1)
+    a1 = a.replace(a[0], b[0], 1)
+    a2 = a1.replace(a[1], b[1], 1)
 
-	
-	b1 = b.replace(b[0], a[0], 1)
-	b2 = b1.replace(b[1], a[1], 1)
-	return a2 + ' ' + b2
+    b1 = b.replace(b[0], a[0], 1)
+    b2 = b1.replace(b[1], a[1], 1)
+    return a2 + ' ' + b2
 
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
-	if got == expected:
-		prefix = ' OK '
-	else:
-		prefix = '  X '
-	print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
+    if got == expected:
+        prefix = ' OK '
+    else:
+        prefix = '  X '
+    print('%s got: %s expected: %s' % (prefix, repr(got), repr(expected)))
 
 
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
 def main():
-	print('donuts')
-	# Each line calls donuts, compares its result to the expected for that call
-	test(donuts(4), 'Number of donuts: 4')
-	test(donuts(9), 'Number of donuts: 9')
-	test(donuts(10), 'Number of donuts: many')
-	test(donuts(99), 'Number of donuts: many')
+    print('donuts')
+    # Each line calls donuts, compares its result to the expected for that call
+    test(donuts(4), 'Number of donuts: 4')
+    test(donuts(9), 'Number of donuts: 9')
+    test(donuts(10), 'Number of donuts: many')
+    test(donuts(99), 'Number of donuts: many')
 
-	print('\nboth_ends')
-	test(both_ends('spring'), 'spng')
-	test(both_ends('Hello'), 'Helo')
-	test(both_ends('a'), '')
-	test(both_ends('xyz'), 'xyyz')
+    print('\nboth_ends')
+    test(both_ends('spring'), 'spng')
+    test(both_ends('Hello'), 'Helo')
+    test(both_ends('a'), '')
+    test(both_ends('xyz'), 'xyyz')
 
-	print('\nfix_start')
-	test(fix_start('babble'), 'ba**le')
-	test(fix_start('aardvark'), 'a*rdv*rk')
-	test(fix_start('google'), 'goo*le')
-	test(fix_start('donut'), 'donut')
+    print('\nfix_start')
+    test(fix_start('babble'), 'ba**le')
+    test(fix_start('aardvark'), 'a*rdv*rk')
+    test(fix_start('google'), 'goo*le')
+    test(fix_start('donut'), 'donut')
 
-	print('\nmix_up')
-	test(mix_up('mix', 'pod'), 'pox mid')
-	test(mix_up('dog', 'dinner'), 'dig donner')
-	test(mix_up('gnash', 'sport'), 'spash gnort')
-	test(mix_up('pezzy', 'firm'), 'fizzy perm')
+    print('\nmix_up')
+    test(mix_up('mix', 'pod'), 'pox mid')
+    test(mix_up('dog', 'dinner'), 'dig donner')
+    test(mix_up('gnash', 'sport'), 'spash gnort')
+    test(mix_up('pezzy', 'firm'), 'fizzy perm')
 
 
 # Standard boilerplate to call the main() function.
 if __name__ == '__main__':
-	main()
+    main()
