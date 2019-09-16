@@ -61,6 +61,7 @@ def create_dictionary(filename):
     
     return dicc
 
+
 def print_words(filename):
     dicc = create_dictionary(filename)
 
@@ -69,6 +70,7 @@ def print_words(filename):
         print(x, y)
 
     return
+
 
 def print_top(filename):
     dicc = create_dictionary(filename)
@@ -79,7 +81,6 @@ def print_top(filename):
 
     return
 
-###
 
 # This basic command line argument parsing code is provided and
 # calls the print_words() and print_top() functions which you must define.
