@@ -22,7 +22,7 @@
 # and last chars of the string are the same.
 # Note: python does not have a ++ operator, but += works.
 def match_ends(words):
-    
+
     i = 0
 
     for string in words:
@@ -48,7 +48,7 @@ def front_x(words):
             x_list.append(s)
         else:
             o_list.append(s)
-    
+
     x_list.sort()
     o_list.sort()
 
@@ -86,7 +86,7 @@ def main():
     test(match_ends(['', 'x', 'xy', 'xyx', 'xx']), 2)
     test(match_ends(['aaa', 'be', 'abc', 'hello']), 1)
 
-    print ('\nfront_x')
+    print('\nfront_x')
     test(front_x(['bbb', 'ccc', 'axx', 'xzz', 'xaa']),
          ['xaa', 'xzz', 'axx', 'bbb', 'ccc'])
     test(front_x(['ccc', 'bbb', 'aaa', 'xcc', 'xaa']),

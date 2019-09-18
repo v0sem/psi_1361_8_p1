@@ -58,7 +58,7 @@ def create_dictionary(filename):
             dicc[string] = 1
         else:
             dicc[string] += 1
-    
+
     return dicc
 
 
@@ -66,7 +66,7 @@ def print_words(filename):
     dicc = create_dictionary(filename)
 
     wlist = sorted(dicc.items(), key=lambda i: i[0])
-    for x,y in wlist:
+    for x, y in wlist:
         print(x, y)
 
     return
@@ -76,7 +76,7 @@ def print_top(filename):
     dicc = create_dictionary(filename)
 
     wlist = sorted(dicc.items(), key=lambda i: i[1], reverse=True)[:20]
-    for x,y in wlist:
+    for x, y in wlist:
         print(x, y)
 
     return
